@@ -1,82 +1,41 @@
-# Lightweight React Template for KAVIA
+# SocialBoard React Frontend
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern, lightweight React UI for a social media dashboard featuring a sidebar layout with Dashboard, Profile, and Admin sections. Styled with a light theme and branded accents.
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Sidebar navigation: Dashboard, Profile, Admin (visible when user is admin)
+- Analytics overview: key metrics, recent posts, performance summary
+- Profile view: user info and account details
+- Admin area: user management, system health, security notes
+- Modern light theme with the following palette:
+  - Primary: `#3B82F6`
+  - Secondary: `#10B981`
+  - Success: `#F59E0B`
+  - Error: `#EF4444`
+  - Background: `#f9fafb`
+  - Surface: `#ffffff`
+  - Text: `#111827`
 
 ## Getting Started
 
 In the project directory, you can run:
 
 ### `npm start`
-
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Run the app in development mode at http://localhost:3000
 
 ### `npm test`
-
-Launches the test runner in interactive watch mode.
+Run tests in watch mode.
 
 ### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Build the production bundle.
 
 ## Customization
 
-### Colors
+Theme variables are defined in `src/App.css`. Update CSS variables in the `:root` block to customize colors.
 
-The main brand colors are defined as CSS variables in `src/App.css`:
+Environment variables are read via `process.env` (e.g., `REACT_APP_API_BASE`). See `.env.example` in the root container for required variables if applicable.
 
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes
+- Routing is implemented as simple tab switching for brevity. You can integrate `react-router` later if deep links are required.
+- Admin visibility is controlled by a simple `isAdmin` state in `App.js` for demonstration.
